@@ -25,7 +25,8 @@
       (append (mapcar 'el-get-source-name el-get-sources)
               '(autopair    haml-mode  slim-mode paredit
                 ruby-end    ruby-block slime     powerline
-                coffee-mode helm       scss-mode auto-complete)))
+                coffee-mode helm       scss-mode auto-complete
+                ac-slime)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
