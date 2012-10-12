@@ -9,7 +9,7 @@
   (url-retrieve
    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
    (lambda (s)
-     (let (el-get-master-branch)
+     (let (el-get-master-branch el-get-install-skip-emacswiki-recipes)
        (goto-char (point-max))
        (eval-print-last-sexp)))))
 
@@ -22,11 +22,10 @@
                :features    livescript-mode)))
 
 (setq prerequisite-libraries
-      (append '(autopair    diminish haml-mode  slim-mode
-                ruby-mode   ruby-end ruby-block slime
-                coffee-mode helm     scss-mode  paredit
-                powerline)
-              (mapcar 'el-get-source-name el-get-sources)))
+      (append (mapcar 'el-get-source-name el-get-sources)
+              '(autopair    haml-mode  slim-mode paredit
+                ruby-end    ruby-block slime     powerline
+                coffee-mode helm       scss-mode auto-complete)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"

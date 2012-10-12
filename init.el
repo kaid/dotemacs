@@ -51,10 +51,4 @@
 
 ;; (setq mac-option-modifier 'meta)
 
-;; ;;(provide 'prelude-osx)
-
-;; ;; bla
-;; (fset 'replace-ctrlms
-;;    [escape ?< escape ?% ?\C-q ?\C-m return ?\C-q ?\C-j return ?!])
-;; (global-set-key "\C-cm" 'replace-ctrlms)
 (put 'upcase-region 'disabled nil)
