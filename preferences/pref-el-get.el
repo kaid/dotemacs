@@ -26,7 +26,7 @@
               '(autopair    haml-mode  slim-mode paredit
                 ruby-end    ruby-block slime     powerline
                 coffee-mode helm       scss-mode auto-complete
-                ac-slime)))
+                ac-slime    egg)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
