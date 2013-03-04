@@ -14,19 +14,28 @@
        (eval-print-last-sexp)))))
 
 (setq el-get-sources
-      '((:name livescript-mode
-               :website     "https://github.com/tensai-cirno/livescript-mode"
-               :description "emacs livescript mode"
-               :type        github
-               :pkgname     "tensai-cirno/livescript-mode"
+      '((:name paredit
+               :description "Minor mode for editing parentheses"
+               :type        git
+               :url         "git://github.com/emacsmirror/paredit.git"
+               :features    paredit)
+
+				(:name ruby-electric
+							 :type        git
+							 :url         "git://github.com/qoobaa/ruby-electric.git"
+							 :features    ruby-electric)
+        (:name livescript-mode
+               :type        git
+               :url         "git://github.com/yhisamatsu/livescript-mode.git"
                :features    livescript-mode)))
 
 (setq prerequisite-libraries
       (append (mapcar 'el-get-source-name el-get-sources)
               '(autopair    haml-mode  slim-mode paredit
-                ruby-end    ruby-block slime     powerline
-                coffee-mode helm       scss-mode auto-complete
-                ac-slime    egg)))
+                slime       powerline  magit     ruby-electric
+                coffee-mode helm       ac-slime  auto-complete
+								quack       ghc-mod    scion     haskell-mode
+                clang-completion-mode  google-c-style)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"

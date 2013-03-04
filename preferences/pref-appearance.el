@@ -41,4 +41,11 @@
 	    (setq mode-name "rb")))
 
 
+;; Chinese font
+(set-fontset-font
+    (frame-parameter nil 'font)
+    'han
+    (font-spec :family "Hiragino Sans GB" ))
+
+
 (provide 'pref-appearance)
