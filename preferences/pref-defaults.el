@@ -4,6 +4,7 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq c-basic-offset 4)
+(setq ruby-insert-encoding-magic-comment nil)
 
 ;; Key bindings
 (define-key emacs-lisp-mode-map (kbd "C-c v") 'eval-buffer)

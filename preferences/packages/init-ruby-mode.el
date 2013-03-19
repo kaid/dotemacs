@@ -1,7 +1,8 @@
 ;; Ruby mode settings
 (add-hook 'ruby-mode-hook
-	  (lambda ()
-            (ruby-electric-mode 1)))
+          (lambda ()
+            (ruby-end-mode 1)
+            (autopair-mode 1)))
 
 ;; Ruby files
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))

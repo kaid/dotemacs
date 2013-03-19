@@ -19,23 +19,27 @@
                :type        git
                :url         "git://github.com/emacsmirror/paredit.git"
                :features    paredit)
-
-				(:name ruby-electric
+        (:name Enhanced-Ruby-Mode
+               :type        git
+               :url         "git://github.com/jacott/Enhanced-Ruby-Mode.git"
+               :features    ruby-mode)
+				(:name ruby-end
 							 :type        git
-							 :url         "git://github.com/qoobaa/ruby-electric.git"
-							 :features    ruby-electric)
+							 :url         "git://github.com/rejeep/ruby-end.git"
+							 :features    ruby-end-mode)
         (:name livescript-mode
                :type        git
-               :url         "git://github.com/yhisamatsu/livescript-mode.git"
+               :url         "git://github.com/bdowning/livescript-mode.git"
                :features    livescript-mode)))
 
 (setq prerequisite-libraries
       (append (mapcar 'el-get-source-name el-get-sources)
               '(autopair    haml-mode  slim-mode paredit
-                slime       powerline  magit     ruby-electric
+                slime       powerline  magit     ruby-mode
                 coffee-mode helm       ac-slime  auto-complete
 								quack       ghc-mod    scion     haskell-mode
-                clang-completion-mode  google-c-style)))
+                clang-completion-mode  google-c-style
+                livescript-mode        ruby-end)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
