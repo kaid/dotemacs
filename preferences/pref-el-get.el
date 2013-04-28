@@ -26,20 +26,35 @@
 				(:name ruby-end
 							 :type        git
 							 :url         "git://github.com/rejeep/ruby-end.git"
-							 :features    ruby-end-mode)
+							 :features    ruby-end)
         (:name livescript-mode
                :type        git
                :url         "git://github.com/bdowning/livescript-mode.git"
-               :features    livescript-mode)))
+               :features    livescript-mode)
+        (:name erlang-mode
+               :description "Major modes for editing and running Erlang"
+               :type        git
+               :url         "git://github.com/emacsmirror/erlang.git"
+               :load        "erlang-start.el")
+        (:name auto-complete-distel
+               :type        git
+               :url         "git://github.com/rost/auto-complete-distel.git"
+               :depends     (auto-complete)
+               :features    auto-complete-distel)
+        (:name elixir-mode
+               :type        git
+               :url         "git://github.com/elixir-lang/emacs-elixir"
+               :features    elixir-mode
+               :load        "elixir-mode-setup.el")))
 
 (setq prerequisite-libraries
       (append (mapcar 'el-get-source-name el-get-sources)
               '(autopair    haml-mode  slim-mode paredit
-                slime       powerline  magit     ruby-mode
+                slime       powerline  magit     ruby-end
                 coffee-mode helm       ac-slime  auto-complete
 								quack       ghc-mod    scion     haskell-mode
                 clang-completion-mode  google-c-style
-                livescript-mode        ruby-end)))
+                distel))) ;haskell-interactive-mode
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"

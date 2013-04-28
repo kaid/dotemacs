@@ -6,3 +6,4 @@ tramp
 *.elc
 *.dat
 eshell
+cabal-dev/*
