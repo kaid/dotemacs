@@ -9,7 +9,7 @@
   (url-retrieve
    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
    (lambda (s)
-     (let (el-get-master-branch el-get-install-skip-emacswiki-recipes)
+     (let (el-get-master-branch)
        (goto-char (point-max))
        (eval-print-last-sexp)))))
 
@@ -19,28 +19,26 @@
                :type        git
                :url         "git://github.com/emacsmirror/paredit.git"
                :features    paredit)
-        (:name Enhanced-Ruby-Mode
+        (:name ruby-end
                :type        git
-               :url         "git://github.com/jacott/Enhanced-Ruby-Mode.git"
-               :features    ruby-mode)
-				(:name ruby-end
-							 :type        git
-							 :url         "git://github.com/rejeep/ruby-end.git"
-							 :features    ruby-end)
+               :url         "git://github.com/rejeep/ruby-end.git"
+               :features    ruby-end)
         (:name livescript-mode
                :type        git
                :url         "git://github.com/bdowning/livescript-mode.git"
                :features    livescript-mode)
-        (:name erlang-mode
+        (:name erlang-start
                :description "Major modes for editing and running Erlang"
                :type        git
                :url         "git://github.com/emacsmirror/erlang.git"
+               :features    erlang-start
                :load        "erlang-start.el")
-        (:name auto-complete-distel
+        (:name edts
                :type        git
-               :url         "git://github.com/rost/auto-complete-distel.git"
-               :depends     (auto-complete)
-               :features    auto-complete-distel)
+               :url         "git://github.com/tjarvstrand/edts.git"
+               :build       ("make")
+               :features    edts
+               :load        "edts-start.el")
         (:name elixir-mode
                :type        git
                :url         "git://github.com/elixir-lang/emacs-elixir"
@@ -49,12 +47,11 @@
 
 (setq prerequisite-libraries
       (append (mapcar 'el-get-source-name el-get-sources)
-              '(autopair    haml-mode  slim-mode paredit
-                slime       powerline  magit     ruby-end
+              '(autopair    haml-mode  slim-mode google-c-style
+                slime       powerline  magit     enh-ruby-mode
                 coffee-mode helm       ac-slime  auto-complete
-								quack       ghc-mod    scion     haskell-mode
-                clang-completion-mode  google-c-style
-                distel))) ;haskell-interactive-mode
+                quack       ghc-mod    scion     haskell-mode
+                clang-completion-mode)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
