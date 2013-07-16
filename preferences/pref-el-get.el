@@ -21,22 +21,12 @@
                :features    paredit)
         (:name ruby-end
                :type        git
-<<<<<<< HEAD
-               :url         "git://github.com/rejeep/ruby-end.git"
-               :features    ruby-end)
-=======
                :url         "git://github.com/jacott/Enhanced-Ruby-Mode.git"
                :features    ruby-mode)
-				(:name ruby-end
-							 :type        git
-							 :url         "git://github.com/rejeep/ruby-end.git"
-							 :features    ruby-end)
->>>>>>> 6d62dce... added and configured erlang mode with distel mode
         (:name livescript-mode
                :type        git
                :url         "git://github.com/bdowning/livescript-mode.git"
                :features    livescript-mode)
-<<<<<<< HEAD
         (:name erlang-start
                :description "Major modes for editing and running Erlang"
                :type        git
@@ -49,18 +39,6 @@
                :build       ("make")
                :features    edts
                :load        "edts-start.el")
-=======
-        (:name erlang-mode
-               :description "Major modes for editing and running Erlang"
-               :type        git
-               :url         "git://github.com/emacsmirror/erlang.git"
-               :load        "erlang-start.el")
-        (:name auto-complete-distel
-               :type        git
-               :url         "git://github.com/rost/auto-complete-distel.git"
-               :depends     (auto-complete)
-               :features    auto-complete-distel)
->>>>>>> 6d62dce... added and configured erlang mode with distel mode
         (:name elixir-mode
                :type        git
                :url         "git://github.com/elixir-lang/emacs-elixir"
@@ -69,20 +47,11 @@
 
 (setq prerequisite-libraries
       (append (mapcar 'el-get-source-name el-get-sources)
-<<<<<<< HEAD
               '(autopair    haml-mode  slim-mode google-c-style
                 slime       powerline  magit     enh-ruby-mode
                 coffee-mode helm       ac-slime  auto-complete
                 quack       ghc-mod    scion     haskell-mode
                 clang-completion-mode)))
-=======
-              '(autopair    haml-mode  slim-mode paredit
-                slime       powerline  magit     ruby-end
-                coffee-mode helm       ac-slime  auto-complete
-								quack       ghc-mod    scion     haskell-mode
-                clang-completion-mode  google-c-style
-                distel))) ;haskell-interactive-mode
->>>>>>> 6d62dce... added and configured erlang mode with distel mode
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
