@@ -23,6 +23,13 @@
                :type        git
                :url         "git://github.com/jacott/Enhanced-Ruby-Mode.git"
                :features    ruby-mode)
+        (:name haskell-mode
+               :description "A Haskell editing mode"
+               :type elpa
+               :repo ("marmalade" . "http://marmalade-repo.org/packages/")
+               :post-init (progn
+                            (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+                            (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)))
         (:name livescript-mode
                :type        git
                :url         "git://github.com/bdowning/livescript-mode.git"
@@ -43,14 +50,14 @@
                :type        git
                :url         "git://github.com/elixir-lang/emacs-elixir"
                :features    elixir-mode
-               :load        "elixir-mode-setup.el")))
+               :load        "elixir-mode.el")))
 
 (setq prerequisite-libraries
       (append (mapcar 'el-get-source-name el-get-sources)
-              '(autopair    haml-mode  slim-mode google-c-style
-                slime       powerline  magit     enh-ruby-mode
-                coffee-mode helm       ac-slime  auto-complete
-                quack       ghc-mod    scion     haskell-mode
+              '(autopair    haml-mode slim-mode     google-c-style
+                powerline   magit     enh-ruby-mode scala-mode2
+                coffee-mode helm      ac-slime      auto-complete
+                quack       ghc-mod   scion         ensime
                 clang-completion-mode)))
 
 (defcustom el-get-recipes-dir

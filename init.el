@@ -20,6 +20,9 @@
 
 (add-to-list 'load-path preferences-dir)
 
+(require 'package)
+(package-initialize)
+
 (require 'pref-appearance)
 (require 'pref-el-get)
 (require 'pref-defaults)
