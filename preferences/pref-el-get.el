@@ -37,9 +37,13 @@
         (:name erlang-start
                :description "Major modes for editing and running Erlang"
                :type        git
-               :url         "git://github.com/emacsmirror/erlang.git"
+               :url         "git://github.com/erlang/otp"
                :features    erlang-start
-               :load        "erlang-start.el")
+               :load        "lib/tools/emacs/erlang-start.el"
+               :post-init   (progn
+                              (add-to-list
+                               'load-path
+                               (concat vendor-dir "erlang-start/lib/tools/emacs"))))
         (:name edts
                :type        git
                :url         "git://github.com/tjarvstrand/edts.git"

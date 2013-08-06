@@ -18,6 +18,9 @@
 (defvar preferences-dir (concat emacs-dir "preferences/")
   "Directory where all preferences goes")
 
+(defvar vendor-dir (concat emacs-dir "vendor/")
+  "Directory where all packages goes")
+
 (add-to-list 'load-path preferences-dir)
 
 (require 'package)
