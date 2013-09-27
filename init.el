@@ -29,3 +29,5 @@
 (require 'pref-appearance)
 (require 'pref-el-get)
 (require 'pref-defaults)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)

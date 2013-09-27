@@ -19,10 +19,6 @@
                :type        git
                :url         "git://github.com/emacsmirror/paredit.git"
                :features    paredit)
-        (:name ruby-end
-               :type        git
-               :url         "git://github.com/jacott/Enhanced-Ruby-Mode.git"
-               :features    ruby-mode)
         (:name haskell-mode
                :description "A Haskell editing mode"
                :type elpa
@@ -59,10 +55,9 @@
 (setq prerequisite-libraries
       (append (mapcar 'el-get-source-name el-get-sources)
               '(autopair    haml-mode slim-mode     google-c-style
-                powerline   magit     enh-ruby-mode scala-mode2
-                coffee-mode helm      ac-slime      auto-complete
-                quack       ghc-mod   scion         ensime
-                clang-completion-mode)))
+                powerline   magit     scala-mode2   clang-completion-mode
+                coffee-mode helm      auto-complete quack
+                ghc-mod   scion)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
