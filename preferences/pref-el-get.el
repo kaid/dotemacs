@@ -57,7 +57,7 @@
               '(autopair    haml-mode slim-mode     google-c-style
                 powerline   magit     scala-mode2   clang-completion-mode
                 coffee-mode helm      auto-complete quack
-                ghc-mod   scion)))
+                ghc-mod     scion     ruby-electric)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
