@@ -19,6 +19,15 @@
                :type        git
                :url         "git://github.com/emacsmirror/paredit.git"
                :features    paredit)
+        (:name ensime
+               :description "ENhanced Scala Interaction Mode for Emacs"
+               :type        github
+               :pkgname     "ensime/ensime-src"
+               :build       '(("sbt" "update" "stage"))
+               :load-path   ("./dist")
+               :post-init   (progn
+                              (autoload 'ensime-scala-mode-hook "ensime")
+                              (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
         (:name haskell-mode
                :description "A Haskell editing mode"
                :type elpa
@@ -57,7 +66,7 @@
               '(autopair    haml-mode slim-mode     google-c-style
                 powerline   magit     scala-mode2   clang-completion-mode
                 coffee-mode helm      auto-complete quack
-                ghc-mod     scion     ruby-electric)))
+                ghc-mod     scion     ruby-electric markdown-mode)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
