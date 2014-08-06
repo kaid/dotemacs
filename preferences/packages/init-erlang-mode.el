@@ -18,5 +18,3 @@
 (add-to-list 'auto-mode-alist '(".*\\.config\\'" . erlang-mode))
 (add-to-list 'auto-mode-alist '(".*\\.rel\\'" . erlang-mode))
 (add-to-list 'auto-mode-alist '(".*\\.script\\'" . erlang-mode))
-
-(require 'erlang-flymake)

@@ -5,13 +5,12 @@
 
 (setq el-get-user-package-directory (concat preferences-dir "packages/"))
 
-(unless (require 'el-get nil t)
-  (url-retrieve
-   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-   (lambda (s)
-     (let (el-get-master-branch)
-       (goto-char (point-max))
-       (eval-print-last-sexp)))))
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
 
 (setq el-get-sources
       '((:name paredit
@@ -19,42 +18,18 @@
                :type        git
                :url         "git://github.com/emacsmirror/paredit.git"
                :features    paredit)
-        (:name ensime
-               :description "ENhanced Scala Interaction Mode for Emacs"
-               :type        github
-               :pkgname     "ensime/ensime-src"
-               :build       '(("sbt" "update" "stage"))
-               :load-path   ("./dist")
-               :post-init   (progn
-                              (autoload 'ensime-scala-mode-hook "ensime")
-                              (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
-        (:name haskell-mode
-               :description "A Haskell editing mode"
-               :type elpa
-               :repo ("marmalade" . "http://marmalade-repo.org/packages/")
-               :post-init (progn
-                            (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-                            (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)))
         (:name livescript-mode
                :type        git
                :url         "git://github.com/bdowning/livescript-mode.git"
                :features    livescript-mode)
-        (:name erlang-start
-               :description "Major modes for editing and running Erlang"
-               :type        git
-               :url         "git://github.com/erlang/otp"
-               :features    erlang-start
-               :load        "lib/tools/emacs/erlang-start.el"
-               :post-init   (progn
-                              (add-to-list
-                               'load-path
-                               (concat vendor-dir "erlang-start/lib/tools/emacs"))))
-        (:name edts
-               :type        git
-               :url         "git://github.com/tjarvstrand/edts.git"
-               :build       ("make")
-               :features    edts
-               :load        "edts-start.el")
+        (:name powerline
+               :website     "https://github.com/Dewdrops/powerline"
+               :depends     (cl-lib)
+               :description "Powerline for Emacs"
+               :type        github
+               :pkgname     "Dewdrops/powerline"
+               :load-path   "."
+               :features powerline)
         (:name elixir-mode
                :type        git
                :url         "git://github.com/elixir-lang/emacs-elixir"
@@ -63,10 +38,16 @@
 
 (setq prerequisite-libraries
       (append (mapcar 'el-get-source-name el-get-sources)
-              '(autopair    haml-mode slim-mode     google-c-style
+              '(autopair    haml-mode slim-mode     erlware-mode
                 powerline   magit     scala-mode2   clang-completion-mode
-                coffee-mode helm      auto-complete quack
-                ghc-mod     scion     ruby-electric markdown-mode)))
+                coffee-mode helm      auto-complete ensime
+                ghc-mod     scion     ruby-electric markdown-mode
+                evil        edts      tern          haskell-mode
+                robe-mode   haskell-mode-exts       helm-haskell-import
+                shime       structured-haskell-mode hi2
+                s           cl-lib    tramp         helm
+                helm-cmd-t  evil-surround           init-paredit
+                cedit)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"

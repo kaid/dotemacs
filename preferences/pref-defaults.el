@@ -19,7 +19,4 @@
 ;; Backward kill word
 (global-set-key "\C-c\w" 'backward-kill-word)
 
-;; Go to line
-(global-set-key "\C-c\l" 'goto-line)
-
 (provide 'pref-defaults)
