@@ -19,4 +19,7 @@
 ;; Backward kill word
 (global-set-key "\C-c\w" 'backward-kill-word)
 
+;; Indent region
+(global-set-key "\C-c\i" 'indent-region)
+
 (provide 'pref-defaults)

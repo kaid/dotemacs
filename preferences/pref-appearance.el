@@ -36,10 +36,23 @@
 	  (lambda ()
 	    (setq mode-name "el")))
 
+;; Ruby Mode hook
 (add-hook 'ruby-mode-hook
-	  (lambda ()
-	    (setq mode-name "rb")))
+          (lambda ()
+            (setq mode-name "rb")))
 
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
+
+;; JS Mode hook
+(add-hook 'js-mode-hook
+          (lambda ()
+            (smartparens-mode 1)
+            (flycheck-mode 1)))
 
 ;; Chinese font
 (if (display-graphic-p)
