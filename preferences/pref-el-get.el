@@ -48,8 +48,8 @@
                 s           cl-lib    tramp         helm
                 helm-cmd-t  evil-surround           init-paredit
                 cedit       json-mode json-reformat flycheck
-                go-mode   go-autocomplete           multiple-cursors
-                projectile  go-projectile)))
+                go-mode     go-autocomplete         multiple-cursors
+                ruby-tools  projectile              go-projectile)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
