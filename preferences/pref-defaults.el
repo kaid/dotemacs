@@ -44,6 +44,13 @@
 
 (setq js-indent-level 2)
 
+;; CSS Mode Config
+(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.styl$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
+
+
+;; JS/JSON Mode Config
 (add-to-list 'auto-mode-alist '("\\.bowerrc$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
 
