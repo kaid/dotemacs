@@ -46,7 +46,7 @@
                 haskell-mode-exts     helm-haskell-import
                 shime       structured-haskell-mode hi2
                 s           cl-lib    tramp         helm
-                helm-cmd-t  evil-surround           init-paredit
+                helm-cmd-t  evil-surround           smartparens
                 cedit       json-mode json-reformat flycheck
                 go-mode     go-autocomplete         multiple-cursors
                 ruby-tools  web-mode  projectile    go-projectile)))

@@ -36,6 +36,11 @@
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
 
+;; Emacs Lisp Mode Config
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (paredit-mode 1)))
+
 ;; JS Mode Config
 (add-hook 'js-mode-hook
           (lambda ()
@@ -48,11 +53,6 @@
 (add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.styl$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
-
-
-;; JS/JSON Mode Config
-(add-to-list 'auto-mode-alist '("\\.bowerrc$" . json-mode))
-(add-to-list 'auto-mode-alist '("\\.jshintrc$" . json-mode))
 
 ;; Comment/Uncomment region
 (global-set-key "\C-c\c" 'comment-or-uncomment-region)

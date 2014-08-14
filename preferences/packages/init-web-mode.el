@@ -6,4 +6,6 @@
 
 (add-hook 'web-mode-hook
           (lambda ()
-            (setq web-mode-markup-indent-offset 2)))
+            (smartparens-mode 1)))
+
+(setq web-mode-markup-indent-offset 2)
