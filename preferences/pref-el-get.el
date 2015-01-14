@@ -22,14 +22,6 @@
                :type        git
                :url         "git://github.com/bdowning/livescript-mode.git"
                :features    livescript-mode)
-        (:name powerline
-               :website     "https://github.com/Dewdrops/powerline"
-               :depends     (cl-lib)
-               :description "Powerline for Emacs"
-               :type        github
-               :pkgname     "Dewdrops/powerline"
-               :load-path   "."
-               :features    powerline)
         (:name elixir-mode
                :type        git
                :url         "git://github.com/elixir-lang/emacs-elixir"
@@ -39,17 +31,17 @@
 (setq prerequisite-libraries
       (append (mapcar 'el-get-source-name el-get-sources)
               '(autopair    haml-mode slim-mode     erlware-mode
-                powerline   magit     scala-mode2   clang-completion-mode
+                emacs-powerline       magit         scala-mode2
+                clang-completion-mode hi2           structured-haskell-mode
                 coffee-mode helm      auto-complete ensime
                 ghc-mod     scion     ruby-electric markdown-mode
-                evil        edts      tern          haskell-mode
+                evil        edts      haskell-mode  projectile    
                 haskell-mode-exts     helm-haskell-import
-                shime       structured-haskell-mode hi2
                 s           cl-lib    tramp         helm
                 helm-cmd-t  evil-surround           smartparens
                 cedit       json-mode json-reformat flycheck
                 go-mode     go-autocomplete         multiple-cursors
-                ruby-tools  web-mode  projectile    go-projectile)))
+                ruby-tools  web-mode  go-projectile)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"
