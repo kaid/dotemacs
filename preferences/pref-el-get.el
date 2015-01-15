@@ -15,16 +15,21 @@
 (setq el-get-sources
       '((:name paredit
                :description "Minor mode for editing parentheses"
-               :type        git
-               :url         "git://github.com/emacsmirror/paredit.git"
+               :type        github
+               :pkgnamea    "emacsmirror/paredit"
                :features    paredit)
         (:name livescript-mode
-               :type        git
-               :url         "git://github.com/bdowning/livescript-mode.git"
+               :type        github
+               :pkgname     "bdowning/livescript-mode"
                :features    livescript-mode)
+        (:name fiplr
+               :type        github
+               :pkgname     "d11wtq/fiplr"
+               :depends     (grizzl)
+               :features    fiplr)
         (:name elixir-mode
-               :type        git
-               :url         "git://github.com/elixir-lang/emacs-elixir"
+               :type        github
+               :pkgname     "elixir-lang/emacs-elixir"
                :features    elixir-mode
                :load        "elixir-mode.el")))
 
