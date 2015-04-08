@@ -22,11 +22,6 @@
                :type        github
                :pkgname     "bdowning/livescript-mode"
                :features    livescript-mode)
-        (:name fiplr
-               :type        github
-               :pkgname     "d11wtq/fiplr"
-               :depends     (grizzl)
-               :features    fiplr)
         (:name elixir-mode
                :type        github
                :pkgname     "elixir-lang/emacs-elixir"
@@ -46,7 +41,8 @@
                 helm-cmd-t  evil-surround           smartparens
                 cedit       json-mode json-reformat flycheck
                 go-mode     go-autocomplete         multiple-cursors
-                ruby-tools  web-mode  go-projectile)))
+                ruby-tools  web-mode  go-projectile yaml-mode
+                evil-surround)))
 
 (defcustom el-get-recipes-dir
   "~/.emacs.d/recipes/"

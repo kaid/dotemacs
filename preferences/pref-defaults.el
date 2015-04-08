@@ -54,6 +54,10 @@
 (add-to-list 'auto-mode-alist '("\\.styl$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
 
+(add-hook 'css-mode-hook
+          (lambda ()
+            (smartparens-mode 1)))
+
 ;; Comment/Uncomment region
 (global-set-key "\C-c\c" 'comment-or-uncomment-region)
 
