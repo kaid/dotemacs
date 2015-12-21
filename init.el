@@ -7,4 +7,3 @@
 (require 'hooks)
 (require 'modeline)
 (require 'preferences)
-

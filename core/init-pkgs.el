@@ -12,7 +12,7 @@
 
 (require 'use-package)
 
-(use-package paredit :ensure t)
+(use-package lispy :ensure t)
 (use-package autopair :ensure t)
 (use-package magit :ensure t)
 
@@ -26,7 +26,11 @@
 (use-package flycheck :ensure t)
 (use-package smartparens :ensure t)
 (use-package cl-lib :ensure t)
-(use-package projectile :ensure t)
+
+(use-package projectile
+  :ensure t
+  :config (projectile-global-mode))
+
 (use-package tramp :ensure t)
 
 (use-package auto-complete
@@ -36,16 +40,32 @@
             (ac-config-default)
             (global-auto-complete-mode t)))
 
-(use-package helm :ensure t)
-(use-package helm-projectile
+(use-package js2-mode
   :ensure t
-  :config (global-set-key (kbd "M-t") 'helm-projectile))
+  :config (progn
+            (modify-syntax-entry ?< "(>")
+            (modify-syntax-entry ?> ")<")))
 
-(use-package js2-mode :ensure t)
 (use-package json-mode :ensure t)
 (use-package json-reformat :ensure t)
-(use-package icicles :ensure t)
 (use-package powerline :ensure t)
 (use-package web-mode :ensure t)
+
+(use-package swiper
+  :ensure t
+  :config (progn
+            (ivy-mode 1)
+            (setq ivy-use-virtual-buffers t)
+            (setq projectile-completion-system 'ivy)
+            (global-set-key "\C-s" 'swiper)
+            (global-set-key
+             (kbd "M-t")
+             (lambda ()
+               (interactive)
+               (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+               (unwind-protect
+                   (projectile-find-file)
+                (setq ivy-re-builders-alist '((t . ivy--regex-plus))))
+               (print ivy-re-builders-alist)))))
 
 (provide 'init-pkgs)

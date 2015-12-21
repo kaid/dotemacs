@@ -7,7 +7,7 @@
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
-            (paredit-mode 1)
+            (lispy-mode 1)
             (setq mode-name "el")))
 
 (add-hook 'js-mode-hook
@@ -18,7 +18,7 @@
 
 (add-hook 'json-mode-hook
           (lambda ()
-            (paredit-mode -1)
+            (lispy-mode -1)
             (smartparens-mode 1)))
 
 (add-hook 'css-mode-hook
