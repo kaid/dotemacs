@@ -21,6 +21,14 @@
   :config (evil-mode t))
 
 (use-package evil-surround :ensure t)
+(use-package evil-jumper :ensure t)
+(use-package evil-magit :ensure t)
+
+(use-package evil-leader
+  :ensure t
+  :config (global-evil-leader-mode))
+
+(use-package evil-org :ensure t)
 (use-package ruby-tools :ensure t)
 (use-package ruby-electric :ensure t)
 (use-package flycheck :ensure t)
@@ -40,12 +48,7 @@
             (ac-config-default)
             (global-auto-complete-mode t)))
 
-(use-package js2-mode
-  :ensure t
-  :config (progn
-            (modify-syntax-entry ?< "(>")
-            (modify-syntax-entry ?> ")<")))
-
+(use-package js2-mode :ensure t)
 (use-package json-mode :ensure t)
 (use-package json-reformat :ensure t)
 (use-package powerline :ensure t)
@@ -56,16 +59,6 @@
   :config (progn
             (ivy-mode 1)
             (setq ivy-use-virtual-buffers t)
-            (setq projectile-completion-system 'ivy)
-            (global-set-key "\C-s" 'swiper)
-            (global-set-key
-             (kbd "M-t")
-             (lambda ()
-               (interactive)
-               (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
-               (unwind-protect
-                   (projectile-find-file)
-                (setq ivy-re-builders-alist '((t . ivy--regex-plus))))
-               (print ivy-re-builders-alist)))))
+            (setq projectile-completion-system 'ivy)))
 
 (provide 'init-pkgs)

@@ -16,4 +16,16 @@
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
+(defun projectile-H-t ()
+  (interactive)
+  (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  (unwind-protect
+      (projectile-find-file)
+    (setq ivy-re-builders-alist '((t . ivy--regex-plus))))
+  (print ivy-re-builders-alist))
+
+(defun close-window ()
+  (interactive)
+  delete-window)
+
 (provide 'utils)

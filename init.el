@@ -6,4 +6,5 @@
 (require 'auto-modes)
 (require 'hooks)
 (require 'modeline)
+(require 'key-bindings)
 (require 'preferences)
