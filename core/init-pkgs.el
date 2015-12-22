@@ -12,23 +12,28 @@
 
 (require 'use-package)
 
-(use-package lispy :ensure t)
+(use-package lispy
+  :diminish ""
+  :ensure t)
+
 (use-package autopair :ensure t)
 (use-package magit :ensure t)
 
 (use-package evil
   :ensure t
-  :config (evil-mode t))
+  :config (progn
+            (evil-mode t)
+            (diminish 'undo-tree-mode)))
 
 (use-package evil-surround :ensure t)
 (use-package evil-jumper :ensure t)
 (use-package evil-magit :ensure t)
+(use-package evil-org :ensure t)
 
 (use-package evil-leader
   :ensure t
   :config (global-evil-leader-mode))
 
-(use-package evil-org :ensure t)
 (use-package ruby-tools :ensure t)
 (use-package ruby-electric :ensure t)
 (use-package flycheck :ensure t)
@@ -36,12 +41,14 @@
 (use-package cl-lib :ensure t)
 
 (use-package projectile
+  :diminish ""
   :ensure t
   :config (projectile-global-mode))
 
 (use-package tramp :ensure t)
 
 (use-package auto-complete
+  :diminish ""
   :ensure t
   :config (progn
             (require 'auto-complete-config)
@@ -58,7 +65,13 @@
   :ensure t
   :config (progn
             (ivy-mode 1)
+            (diminish 'ivy-mode)
             (setq ivy-use-virtual-buffers t)
+            (setq ivy-extra-directories nil)
+            (add-to-list 'ivy-sort-functions-alist '(t . string>))
             (setq projectile-completion-system 'ivy)))
+
+(use-package counsel :ensure t)
+(use-package multiple-cursors :ensure t)
 
 (provide 'init-pkgs)

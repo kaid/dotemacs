@@ -21,11 +21,13 @@
   (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   (unwind-protect
       (projectile-find-file)
-    (setq ivy-re-builders-alist '((t . ivy--regex-plus))))
-  (print ivy-re-builders-alist))
+    (setq ivy-re-builders-alist '((t . ivy--regex-plus)))))
 
 (defun close-window ()
   (interactive)
   delete-window)
+
+(defun string> (str1 str2)
+  (string< str2 str1))
 
 (provide 'utils)

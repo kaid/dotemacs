@@ -8,7 +8,13 @@
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (lispy-mode 1)
+            (auto-complete-mode 1)
             (setq mode-name "el")))
+
+(add-hook 'ielm-mode-hook
+          (lambda ()
+            (lispy-mode 1)
+            (setq mode-name "ielm")))
 
 (add-hook 'js-mode-hook
           (lambda ()
