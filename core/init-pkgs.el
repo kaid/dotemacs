@@ -16,7 +16,6 @@
   :diminish ""
   :ensure t)
 
-(use-package autopair :ensure t)
 (use-package magit :ensure t)
 
 (use-package evil
@@ -25,19 +24,26 @@
             (evil-mode t)
             (diminish 'undo-tree-mode)))
 
-(use-package evil-surround :ensure t)
+(use-package evil-surround
+  :ensure t
+  :config (global-evil-surround-mode 1))
+
+(use-package evil-smartparens :ensure t)
 (use-package evil-jumper :ensure t)
 (use-package evil-magit :ensure t)
 (use-package evil-org :ensure t)
 
 (use-package evil-leader
   :ensure t
-  :config (global-evil-leader-mode))
+  :config (global-evil-leader-mode 1))
 
 (use-package ruby-tools :ensure t)
 (use-package ruby-electric :ensure t)
-(use-package flycheck :ensure t)
-(use-package smartparens :ensure t)
+
+(use-package flycheck
+  :diminish ""
+  :ensure t)
+
 (use-package cl-lib :ensure t)
 
 (use-package projectile
@@ -47,13 +53,10 @@
 
 (use-package tramp :ensure t)
 
-(use-package auto-complete
+(use-package company
   :diminish ""
   :ensure t
-  :config (progn
-            (require 'auto-complete-config)
-            (ac-config-default)
-            (global-auto-complete-mode t)))
+  :config (global-company-mode t))
 
 (use-package js2-mode :ensure t)
 (use-package json-mode :ensure t)
@@ -73,5 +76,9 @@
 
 (use-package counsel :ensure t)
 (use-package multiple-cursors :ensure t)
+(use-package scala-mode2 :ensure t)
+
+(use-package ensime :ensure t)
+(use-package sbt-mode :ensure t)
 
 (provide 'init-pkgs)

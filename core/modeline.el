@@ -1,4 +1,4 @@
-(setq powerline-height 24)
+(setq powerline-height 20)
 (setq powerline-default-separator 'slant)
 
 (set-face-attribute 'powerline-active1 nil

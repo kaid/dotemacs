@@ -46,4 +46,6 @@
 
 (set-exec-path-from-shell-PATH)
 
+(diminish 'javascript-mode "Js")
+
 (provide 'preferences)

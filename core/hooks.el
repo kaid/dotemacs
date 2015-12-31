@@ -8,7 +8,6 @@
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (lispy-mode 1)
-            (auto-complete-mode 1)
             (setq mode-name "el")))
 
 (add-hook 'ielm-mode-hook
@@ -39,5 +38,14 @@
 (add-hook 'yaml-mode-hook
           (lambda ()
             (smartparens-mode 1)))
+
+(add-hook 'scala-mode-hook
+          (lambda ()
+            (smartparens-mode 1)
+            (ensime-scala-mode-hook)))
+
+(add-hook 'sbt-mode-hook
+          (lambda ()
+            (setq compilation-skip-threshold 1)))
 
 (provide 'hooks)
