@@ -76,9 +76,7 @@
 
 (use-package counsel :ensure t)
 (use-package multiple-cursors :ensure t)
-(use-package scala-mode2 :ensure t)
 
-(use-package ensime :ensure t)
-(use-package sbt-mode :ensure t)
+(use-package flycheck-pos-tip :ensure t)
 
 (provide 'init-pkgs)

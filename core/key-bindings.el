@@ -1,6 +1,6 @@
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'hyper)
-(setq mac-right-command-modifier 'super)
+
 
 (windmove-default-keybindings 'super)
 
@@ -28,8 +28,5 @@
 (global-set-key [(meta ?')] 'next-error)
 
 (define-key emacs-lisp-mode-map [(ctrl c) (v)] 'eval-buffer)
-
-(define-key sbt-mode-map [(ctrl a)] 'comint-bol)
-(define-key sbt-mode-map [(meta return)] 'comint-accumulate)
 
 (provide 'key-bindings)

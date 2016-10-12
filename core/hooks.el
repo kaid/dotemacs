@@ -1,3 +1,8 @@
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(eval-after-load 'flycheck
+  '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
+
 (add-hook 'ruby-mode-hook
           (lambda ()
             (setq mode-name "rb")
@@ -38,14 +43,5 @@
 (add-hook 'yaml-mode-hook
           (lambda ()
             (smartparens-mode 1)))
-
-(add-hook 'scala-mode-hook
-          (lambda ()
-            (smartparens-mode 1)
-            (ensime-scala-mode-hook)))
-
-(add-hook 'sbt-mode-hook
-          (lambda ()
-            (setq compilation-skip-threshold 1)))
 
 (provide 'hooks)
