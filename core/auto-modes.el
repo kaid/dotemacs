@@ -14,4 +14,8 @@
  '("\\.html$" "\\.html$" "\\.erb$")
  'web-mode)
 
+(auto-mode
+ '("\\.js$" "\\.jsx$")
+ 'js2-mode)
+
 (provide 'auto-modes)

@@ -20,7 +20,7 @@
             (lispy-mode 1)
             (setq mode-name "ielm")))
 
-(add-hook 'js-mode-hook
+(add-hook 'js2-mode-hook
           (lambda ()
             (smartparens-mode 1)
             (flycheck-mode 1)

@@ -1,6 +1,6 @@
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'hyper)
-
+(setq mac-right-command-modifier 'super)
 
 (windmove-default-keybindings 'super)
 
